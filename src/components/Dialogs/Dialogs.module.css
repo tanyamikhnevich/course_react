@@ -1,0 +1,14 @@
+.dialogs {
+    display: flex;
+    flex-direction: row;
+
+}
+.dialogsOne {
+    display: flex;
+    flex-direction: column;
+}
+
+.massageOne {
+    display: flex;
+    flex-direction: column;
+}

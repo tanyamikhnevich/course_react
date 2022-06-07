@@ -1,0 +1,23 @@
+.postDiv {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.imgPost {
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+
+}
+.massage {
+margin-right: 30px;
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}

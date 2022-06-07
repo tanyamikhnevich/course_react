@@ -1,0 +1,29 @@
+.nav {
+    grid-area: n;
+
+    background: #DDD3E3;
+    height: 100vh;
+    padding-top: 10px;
+}
+.item {
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+
+
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.item a {
+    text-decoration: none;
+    color: black;
+
+}
+.item a.active {
+    color: #45384C;
+    text-decoration: underline;
+}

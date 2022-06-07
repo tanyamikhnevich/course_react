@@ -1,0 +1,44 @@
+.avaDescriptionDiv {
+    display: flex;
+    flex-direction: row;
+}
+.divAva {
+    margin: 10px 10px;
+}
+.imgAva {
+    width: 168px;
+    height: 168px;
+    left: 24px;
+    top: 24px;
+    object-fit: cover;
+
+}
+.nameAva {
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    margin-left: 10px;
+}
+
+.textareaDiv {
+    background-color: #DDD3E3;
+    margin: 10px 10px;
+
+
+
+
+
+}
+
+.description{
+    resize: none;
+    width: 700px;
+    height: 100px;
+    background-color: #DDD3E3;
+    border-color: #DDD3E3;
+    margin: 10px 10px;
+
+}
