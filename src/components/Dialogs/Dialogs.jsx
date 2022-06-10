@@ -12,8 +12,8 @@ const Dialogs = (props) => {
     let addMassage = () => {
         props.sendMassage();
     }
-    let onMassageChange = (e) => {
-        let mtext = e.target.value;
+    let onMassageChange = () => {
+        let mtext = newMassageElement.current.value;
         props.updateNewMassageText(mtext);
 
     }

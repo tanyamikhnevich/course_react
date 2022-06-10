@@ -7,8 +7,9 @@ let initialState = {
         {id: 2, massage: 'Hi'},
         {id: 3, massage: 'Yo'},
         {id: 4, massage: 'Meow'},
+        {id: 5, massage: 'Wow'},
     ],
-    newMassageText:'hdhd',
+    newMassageText:'Hihi',
     names: [
         {id: 1, name: 'Sveta'},
         {id: 2, name: 'Tanya'},
@@ -21,18 +22,22 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_MASSAGE:
+        case ADD_MASSAGE:{
             let newMassage = {
                 id: 5,
                 massage: state.newMassageText,
             }
-            state.massages.push(newMassage);
-            state.newMassageText = '';
-
-            return state;
-        case UPDATE_NEW_MASSAGE_TEXT:
-            state.newMassageText = action.newMassage;
-            return state;
+            let stateCopy = {...state};
+            stateCopy.massages = [...state.massages]
+            stateCopy.massages.push(newMassage);
+            stateCopy.newMassageText = '';
+            return stateCopy;
+        }
+        case UPDATE_NEW_MASSAGE_TEXT: {
+            let stateCopy = {...state};
+            stateCopy.newMassageText = action.newMassage;
+            return stateCopy;
+    }
         default: return state;
     }
 }
