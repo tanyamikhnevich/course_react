@@ -1,12 +1,17 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
+
 let store ={
     _state: {
         profilePage: {
             posts: [
-                {id: 1, massage: 'Yo', likesCount: 67},
-                {id: 2, massage: 'My first post', likesCount: 34},
+                {id: 1, massage: 'Yo!', likesCount: 65},
+                {id: 2, massage: 'My first post!', likesCount: 34},
                 {id: 3, massage: 'Wow!!', likesCount: 45},
-                {id: 4, massage: 'Yo', likesCount: 38},
-                {id: 4, massage: 'Hello', likesCount: 98},
+                {id: 4, massage: 'Yo!', likesCount: 38},
+                {id: 4, massage: 'Hello!', likesCount: 98},
             ],
             newPostText:'kkuu'
         },
@@ -27,6 +32,7 @@ let store ={
 
             ]
         },
+        sidebar: {},
         newsPage: {
             namesData: [
                 {id: 1, nameD: 'Tanya'},
@@ -42,42 +48,25 @@ let store ={
             ]
         }
     },
+    _callSubscriber () {},
+
     getState() {
         return this._state;
-    },
-    _callSubscriber () {},
-    addPost() {
-        let newPost ={
-            id:5,
-            massage:this._state.profilePage.newPostText,
-            likesCount:0,
-        }
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-     updateNewPostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMassage() {
-        let newMassage = {
-            id:5,
-            massage:this._state.dialogsPage.newMassageText,
-        }
-        this._state.dialogsPage.massages.push(newMassage);
-        this._state.dialogsPage.newMassageText='';
-        this._callSubscriber(this._state);
-    },
-    updateNewMassageText (newMassage) {
-        this._state.dialogsPage.newMassageText=newMassage;
-        this._callSubscriber(this._state);
-
     },
     subscribe(observer) {
         this._callSubscriber = observer;
     },
+
+    dispatch (action) {
+
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebar = sidebarReducer(this._state.sidebar, action);
+
+        this._callSubscriber(this._state);
+        },
 }
+
 
 
 export default store;

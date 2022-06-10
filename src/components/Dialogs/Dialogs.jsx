@@ -4,16 +4,16 @@ import OneDialog from "./Dialog/OneDialog";
 import MassageOne from "./Massage/MassageOne";
 
 const Dialogs = (props) => {
-    let massageElements = props.state.massages.map(m => <MassageOne massage={m.massage}/>);
-    let dialogsElements = props.state.names.map(d => <OneDialog name={d.name} id={d.id}/>);
+    let massageElements = props.dialogsPage.massages.map(m => <MassageOne massage={m.massage}/>);
+    let dialogsElements = props.dialogsPage.names.map(d => <OneDialog name={d.name} id={d.id}/>);
 
     let newMassageElement = React.createRef();
 
     let addMassage = () => {
-        props.addMassage();
+        props.sendMassage();
     }
-    let onMassageChange = () => {
-        let mtext = newMassageElement.current.value;
+    let onMassageChange = (e) => {
+        let mtext = e.target.value;
         props.updateNewMassageText(mtext);
 
     }
@@ -25,7 +25,9 @@ const Dialogs = (props) => {
             <div className={styles.massageOne}>
                 {massageElements}
                 <div>
-                    <textarea onChange={onMassageChange} ref={newMassageElement} value={props.state.newMassageText}/>
+                    <textarea onChange={onMassageChange}
+                              ref={newMassageElement}
+                              value={props.newMassageText}/>
                     <button onClick={addMassage}>Add message</button>
                 </div>
             </div>

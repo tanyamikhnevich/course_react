@@ -4,18 +4,18 @@ import React from "react";
 
 
 const MyPosts = (props) => {
-
+    console.log(props);
+    let postElements = props.posts.map(p => <Post massage={p.massage} likesCount={p.likesCount}/>);
     let newPostElement = React.createRef();
 
-    let addPost = () => {
+    let onAddPost = () => {
         props.addPost();
     }
     let onPostChange = () => {
-        let text=newPostElement.current.value;
+        let text = newPostElement.current.value;
         props.updateNewPostText(text);
-
     }
-    let postElements = props.posts.map(p => <Post massage={p.massage} like={p.likesCount}/>)
+
     return <div>
         <div>
             My post
@@ -23,7 +23,7 @@ const MyPosts = (props) => {
         <div>
             <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
         </div>
-        <button onClick={addPost}>Add post</button>
+        <button onClick={onAddPost}>Add post</button>
         <div>
             New post
         </div>
