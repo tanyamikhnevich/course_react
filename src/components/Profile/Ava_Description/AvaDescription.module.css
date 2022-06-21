@@ -26,6 +26,7 @@
 .textareaDiv {
     background-color: #DDD3E3;
     margin: 10px 10px;
+    height: 168px;
 
 
 
@@ -36,7 +37,7 @@
 .description{
     resize: none;
     width: 700px;
-    height: 100px;
+    height: 80px;
     background-color: #DDD3E3;
     border-color: #DDD3E3;
     margin: 10px 10px;
