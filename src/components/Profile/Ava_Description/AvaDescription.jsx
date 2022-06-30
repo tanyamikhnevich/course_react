@@ -1,15 +1,21 @@
 import styles from './AvaDescription.module.css';
+import Preloader from "../../common/preloader/Preloader";
+import usercat from "../../../assets/images/usercat.png";
 
-const avaDescription = () => {
+const avaDescription = (props) => {
+    if (!props.profile) {
+        return <Preloader/>
+    }
+
     return (
         <div className={styles.avaDescriptionDiv}>
         <div className={styles.divAva}>
             <img className={styles.imgAva}
-                 src='https://th-thumbnailer.cdn-si-edu.com/bZAar59Bdm95b057iESytYmmAjI=/1400x1050/filters:focal(594x274:595x275)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/95/db/95db799b-fddf-4fde-91f3-77024442b92d/egypt_kitty_social.jpg'/>
+                 src={props.profile.photos.large} alt='Avatar'/>
         </div>
         <div className={styles.textareaDiv}>
-            <h2 className={styles.nameAva}>KissaZaya</h2>
-        <textarea className={styles.description} placeholder='Description'/>
+            <h2 className={styles.nameAva}>{props.profile.fullName}</h2>
+        <textarea className={styles.description} placeholder={props.profile.aboutMe}/>
         </div>
     </div>
     )

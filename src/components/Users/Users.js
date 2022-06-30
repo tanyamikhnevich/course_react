@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Users.module.css";
 import usercat from "../../assets/images/usercat.png";
+import {NavLink} from "react-router-dom";
 
 let Users = (props) => {
   return (
@@ -8,7 +9,8 @@ let Users = (props) => {
       <div>
         {props.currentCount.map((p, index) => {
           return (
-            <button key={index}
+            <button
+              key={index}
               className={props.currentPage === p && styles.selectedPage}
               onClick={(e) => {
                 props.onPageChanged(p);
@@ -23,11 +25,13 @@ let Users = (props) => {
         <div key={u.id}>
           <span>
             <div>
-              <img
-                className={styles.userPhoto}
-                src={u.photos.small != null ? u.photos.small : usercat}
-                alt='Avatar'
-              />
+              <NavLink to={"/profile/" + u.id}>
+                <img
+                  className={styles.userPhoto}
+                  src={u.photos.small != null ? u.photos.small : usercat}
+                  alt="Avatar"
+                />
+              </NavLink>
             </div>
             <div>
               {u.followed ? (

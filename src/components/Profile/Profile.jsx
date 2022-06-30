@@ -6,9 +6,9 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 const Profile = (props) => {
     return <div>
-        <Wallpaper/>
-        <AvaDescription/>
-        <MyPostsContainer store = {props.store}/>
+        <Wallpaper profile = {props.profile}/>
+        <AvaDescription profile = {props.profile}/>
+        <MyPostsContainer />
     </div>
 }
 
