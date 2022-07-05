@@ -17,7 +17,7 @@ export const usersAPI = {
   delFollow(id = 1) {
     return instance.delete(`follow/${id}`);
   },
-  postFollow(id) {
+  postFollow(id= 1) {
     return instance.post(`follow/${id}`);
   },
 };
