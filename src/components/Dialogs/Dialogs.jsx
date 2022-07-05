@@ -2,6 +2,7 @@ import styles from './Dialogs.module.css';
 import React from "react";
 import OneDialog from "./Dialog/OneDialog";
 import MassageOne from "./Massage/MassageOne";
+import {Redirect} from "react-router-dom";
 
 const Dialogs = (props) => {
     let massageElements = props.dialogsPage.massages.map(m => <MassageOne massage={m.massage}/>);
@@ -17,6 +18,7 @@ const Dialogs = (props) => {
         props.updateNewMassageText(mtext);
 
     }
+
     return (
         <div className={styles.dialogs}>
             <div className={styles.dialogsOne}>
