@@ -33,3 +33,21 @@
 .pDiv {
 
 }
+
+.loginBlock {
+    float: right;
+    margin-left: 850px;
+    margin-top: 20px;
+    color: #FFFFFF;
+
+}
+
+.loginNav {
+    color: #FFFFFF;
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+
+}

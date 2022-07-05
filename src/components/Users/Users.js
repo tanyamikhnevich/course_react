@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Users.module.css";
 import usercat from "../../assets/images/usercat.png";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { usersAPI } from "../../api/api";
 
 let Users = (props) => {
   return (
@@ -36,16 +37,32 @@ let Users = (props) => {
             <div>
               {u.followed ? (
                 <button
+                  disabled={props.followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    props.unfollow(u.id);
+                    props.toggleIsFollowingProgress(true, u.id);
+                    usersAPI.delFollow(u.id).then((response) => {
+                      if (response.data.resultCode == 0) {
+                        props.unfollow(u.id);
+                      }
+                        props.toggleIsFollowingProgress(false, u.id);
+                    });
+
                   }}
                 >
                   Unfollow
                 </button>
               ) : (
                 <button
+                  disabled={props.followingInProgress.some(id => id === u.id)}
                   onClick={() => {
-                    props.follow(u.id);
+                    props.toggleIsFollowingProgress(true, u.id);
+                    usersAPI.postFollow(u.id).then((response) => {
+                      if (response.data.resultCode == 0) {
+                        props.follow(u.id);
+                      }
+                        props.toggleIsFollowingProgress(false, u.id);
+                    });
+
                   }}
                 >
                   Follow
