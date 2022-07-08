@@ -1,6 +1,5 @@
 import {
   addMassageActionCreator,
-  updateNewMassageTextActionCreator,
 } from "../../redux/dialogs-reducer";
 import Dialogs from "./Dialogs";
 import { connect } from "react-redux";
@@ -11,17 +10,12 @@ import { compose } from "redux";
 let mapStateToProps = (state) => {
   return {
     dialogsPage: state.dialogsPage,
-    newMassageText: state.dialogsPage.newMassageText,
   };
 };
 let mapDispatchToProps = (dispatch) => {
   return {
-    updateNewMassageText: (mtext) => {
-      let action = updateNewMassageTextActionCreator(mtext);
-      dispatch(action);
-    },
-    sendMassage: () => {
-      dispatch(addMassageActionCreator());
+    sendMassage: (newMassageBody) => {
+      dispatch(addMassageActionCreator(newMassageBody));
     },
   };
 };

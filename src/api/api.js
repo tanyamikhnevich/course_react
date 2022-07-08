@@ -17,23 +17,25 @@ export const usersAPI = {
   delFollow(id = 1) {
     return instance.delete(`follow/${id}`);
   },
-  postFollow(id= 1) {
+  postFollow(id = 1) {
     return instance.post(`follow/${id}`);
   },
 };
 
 export const profileAPI = {
   getProfile(userId = 2) {
-    return instance
-      .get(`profile/` + userId)
-      .then((response) => response.data);
+    return instance.get(`profile/` + userId).then((response) => response.data);
+  },
+  getStatus(userId) {
+    return instance.get(`profile/status/` + userId);
+  },
+  updateStatus(status) {
+    return instance.put(`profile/status/`, {status: status});
   },
 };
 
 export const authAPI = {
   getAuth() {
-    return instance
-      .get(`auth/me`)
-      .then((response) => response.data);
+    return instance.get(`auth/me`).then((response) => response.data);
   },
 };

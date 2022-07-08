@@ -6,8 +6,8 @@
     margin: 10px 10px;
 }
 .imgAva {
-    width: 168px;
-    height: 168px;
+    width: 200px;
+    height: 200px;
     left: 24px;
     top: 24px;
     object-fit: cover;
@@ -17,29 +17,39 @@
     font-family: 'Graphik LCG';
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 30px;
     line-height: 140%;
     color: #000000;
-    margin-left: 10px;
+    margin: 0 ;
+    padding: 10px 10px;
 }
 
-.textareaDiv {
-    background-color: #DDD3E3;
-    margin: 10px 10px;
-    height: 168px;
-
-
-
-
-
-}
-
-.description{
-    resize: none;
-    width: 700px;
-    height: 80px;
+.description {
+    width: 100%;
     background-color: #DDD3E3;
     border-color: #DDD3E3;
     margin: 10px 10px;
+}
+.aboutMe {
+    background-color: #DDD3E3;
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    margin: 0;
+    padding: 10px 10px;
 
+}
+.profileStatus {
+    background-color: #DDD3E3;
+    font-family: 'Graphik LCG';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    color: #000000;
+    margin: 0;
+    padding: 10px 10px;
 }
