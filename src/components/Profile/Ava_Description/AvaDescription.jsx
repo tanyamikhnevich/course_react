@@ -1,6 +1,6 @@
 import styles from "./AvaDescription.module.css";
 import Preloader from "../../common/preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const avaDescription = (props) => {
   if (!props.profile) {
@@ -24,7 +24,7 @@ const avaDescription = (props) => {
             "Description: no information"}
         </div>
         <div className={styles.profileStatus}>
-          <ProfileStatus
+          <ProfileStatusWithHooks
             status={props.status}
             updateStatus={props.updateStatus}
           />
