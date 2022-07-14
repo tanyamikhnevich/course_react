@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/course_react/static/css/main.9085c2b6.css",
-    "main.js": "/course_react/static/js/main.be3b1580.js",
+    "main.js": "/course_react/static/js/main.1bc2951b.js",
     "static/css/920.fce2da8f.chunk.css": "/course_react/static/css/920.fce2da8f.chunk.css",
     "static/js/920.fb9d2465.chunk.js": "/course_react/static/js/920.fb9d2465.chunk.js",
     "static/css/110.4a04d1c0.chunk.css": "/course_react/static/css/110.4a04d1c0.chunk.css",
@@ -11,7 +11,7 @@
     "static/media/usercat.png": "/course_react/static/media/usercat.63a1c2bf1568fd5182b2.png",
     "index.html": "/course_react/index.html",
     "main.9085c2b6.css.map": "/course_react/static/css/main.9085c2b6.css.map",
-    "main.be3b1580.js.map": "/course_react/static/js/main.be3b1580.js.map",
+    "main.1bc2951b.js.map": "/course_react/static/js/main.1bc2951b.js.map",
     "920.fce2da8f.chunk.css.map": "/course_react/static/css/920.fce2da8f.chunk.css.map",
     "920.fb9d2465.chunk.js.map": "/course_react/static/js/920.fb9d2465.chunk.js.map",
     "110.4a04d1c0.chunk.css.map": "/course_react/static/css/110.4a04d1c0.chunk.css.map",
@@ -20,6 +20,6 @@
   },
   "entrypoints": [
     "static/css/main.9085c2b6.css",
-    "static/js/main.be3b1580.js"
+    "static/js/main.1bc2951b.js"
   ]
 }
