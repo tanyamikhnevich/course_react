@@ -4,9 +4,8 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Music from "./components/Music/Music";
 // import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import { BrowserRouter, Route, withRouter } from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, withRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
-// import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
 import { Component } from "react";
@@ -16,12 +15,10 @@ import { initializeApp } from "./redux/app-reducer";
 import Preloader from "./components/common/preloader/Preloader";
 import store from "./redux/redux-store";
 import React from "react";
+import ProfileContainer from "./components/Profile/ProfileContainer";
 
 const DialogsContainer = React.lazy(() =>
   import("./components/Dialogs/DialogsContainer")
-);
-const ProfileContainer = React.lazy(() =>
-  import("./components/Profile/ProfileContainer")
 );
 
 class App extends Component {
@@ -48,16 +45,7 @@ class App extends Component {
               );
             }}
           />
-          <Route
-            path="/profile/:userId?"
-            render={() => {
-              return (
-                <React.Suspense fallback={<div>Loading...</div>}>
-                  <ProfileContainer />
-                </React.Suspense>
-              );
-            }}
-          />
+          <Route path="/profile/:userId?" render={() => <ProfileContainer />}/>
           <Route path="/news" render={() => <News />} />
           <Route path="/music" render={() => <Music />} />
           <Route path="/settings" render={() => <Settings />} />
@@ -80,11 +68,11 @@ let AppContainer = compose(
 
 const SamuraiJSApp = (props) => {
   return (
-    <BrowserRouter>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 export default SamuraiJSApp;

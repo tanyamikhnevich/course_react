@@ -53,3 +53,14 @@
     margin: 0;
     padding: 10px 10px;
 }
+
+.contacts {
+    margin-left: 20px;
+}
+
+.formSummaryError {
+    border: solid red 1px;
+    padding: 5px;
+    color: firebrick;
+
+}
