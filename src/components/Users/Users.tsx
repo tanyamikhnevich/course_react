@@ -1,14 +1,20 @@
-import React from "react";
+import * as React from "react";
 import styles from "./Users.module.css";
 import User from "./User";
+import { UserType } from "../../Types/types";
 
-let Users = ({
-  users,
-  onPageChanged,
-  currentPage,
-  currentCount,
-  ...props
-}) => {
+type PropsType = {
+  users: Array<UserType>;
+  onPageChanged: (pageNumber: number) => void;
+  currentPage: number;
+  currentCount: any
+    followingInProgress: Array<number>
+    unfollow: (userId: number) => void
+    follow: (userId: number) => void
+
+};
+
+let Users: React.FC<PropsType> = ({ users, onPageChanged, currentPage, currentCount, ...props }) => {
   return (
     <div>
       <div>
@@ -26,13 +32,15 @@ let Users = ({
           );
         })}
       </div>
-      {users.map(u => <User
-          user = {u}
+      {users.map((u) => (
+        <User
+          user={u}
           key={u.id}
           followingInProgress={props.followingInProgress}
           unfollow={props.unfollow}
-          follow={props.follow}/>
-          )}
+          follow={props.follow}
+        />
+      ))}
     </div>
   );
 };

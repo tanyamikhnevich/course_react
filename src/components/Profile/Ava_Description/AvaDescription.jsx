@@ -2,16 +2,15 @@ import styles from "./AvaDescription.module.css";
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import usercat from "../../../assets/images/usercat.png";
-import { updateStatus } from "../../../redux/profile-reducer";
 import ProfileDataForm from "../ProfileDataForm";
 import React, { useState } from "react";
 
 const AvaDescription = ({
   profile,
   status,
-  updateStatus,
   isOwner,
   savePhoto,
+  updateStatus,
   saveProfile,
 }) => {
   let [editMode, setEditMode] = useState(false);
@@ -27,11 +26,9 @@ const AvaDescription = ({
   };
 
   const onSubmit = (formData) => {
-    saveProfile(formData).then(
-          () => {
-              setEditMode(false);
-          }
-    )
+    saveProfile(formData).then(() => {
+      setEditMode(false);
+    });
   };
 
   return (
@@ -46,7 +43,7 @@ const AvaDescription = ({
       </div>
       {editMode ? (
         <ProfileDataForm
-            initialValues={profile}
+          initialValues={profile}
           onSubmit={onSubmit}
           profile={profile}
         />
@@ -73,7 +70,13 @@ const Contact = ({ contactTitle, contactValue }) => {
   );
 };
 
-const ProfileData = ({ profile, status, isOwner, goToEditMode }) => {
+const ProfileData = ({
+  profile,
+  status,
+  isOwner,
+  goToEditMode,
+  updateStatus,
+}) => {
   return (
     <div className={styles.description}>
       {isOwner && (
