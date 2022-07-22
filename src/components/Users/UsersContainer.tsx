@@ -4,8 +4,8 @@ import {
   follow,
   unfollow,
   getUsers,
-} from "../../redux/users-reducer.ts";
-import Users from "./Users.tsx";
+} from "../../redux/users-reducer";
+import Users from "./Users";
 import Preloader from "../common/preloader/Preloader";
 import { compose } from "redux";
 import {
@@ -15,7 +15,7 @@ import {
   getPageSize,
   getTotalUsersCount,
   getUsersSuper,
-} from "../../redux/users-selections.ts";
+} from "../../redux/users-selections";
 import {UserType} from "../../Types/types";
 import {AppStateType} from "../../redux/redux-store";
 

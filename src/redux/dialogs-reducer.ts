@@ -1,12 +1,4 @@
-const ADD_MASSAGE = "ADD-MASSAGE";
-
-type MassagesType = {
-  id: number, massage: string
-}
-
-type NamesType = {
-  id: number, name: string
-}
+import {InferActionsTypes} from "./redux-store";
 
 let initialState = {
   massages: [
@@ -25,11 +17,9 @@ let initialState = {
   ] as Array<NamesType>,
 };
 
-export type InitialStateType = typeof initialState
-
-const dialogsReducer = (state = initialState, action: any): InitialStateType => {
+const dialogsReducer = (state = initialState, action: ActionsTypes): InitialStateType => {
   switch (action.type) {
-    case ADD_MASSAGE:
+    case "ADD-MASSAGE":
       let newMassage = action.newMassageBody;
       return {
         ...state,
@@ -41,14 +31,22 @@ const dialogsReducer = (state = initialState, action: any): InitialStateType => 
   }
 };
 
-type AddMassageActionCreatorType = {
-  type: typeof ADD_MASSAGE,
-  newMassageBody: string,
+export const actions = {
+ addMassageActionCreator: (newMassageBody: string) => ({
+    type: "ADD-MASSAGE",
+    newMassageBody,
+  } as const),
 }
 
-export const addMassageActionCreator = (newMassageBody: string): AddMassageActionCreatorType => ({
-  type: ADD_MASSAGE,
-  newMassageBody,
-});
 
 export default dialogsReducer;
+
+
+type MassagesType = {
+  id: number, massage: string
+}
+type NamesType = {
+  id: number, name: string
+}
+export type InitialStateType = typeof initialState
+type ActionsTypes = InferActionsTypes<typeof actions>;
