@@ -2,11 +2,9 @@ import reportWebVitals from "./reportWebVitals";
 import * as React from "react";
 import "./index.css";
 import SamuraiJSApp from "./App";
-import ReactDOM from "react";
 import { createRoot } from 'react-dom/client';
 
 
-//const root = ReactDOM.createRoot(document.getElementById("root"));
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
